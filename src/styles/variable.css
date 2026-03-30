@@ -1,0 +1,49 @@
+:root {
+  /* Backgrounds */
+  --color-bg-page: #f0f7f2;
+  --color-bg-card: #ffffff;
+  --color-bg-surface: #e6f2eb;
+
+  /* Text */
+  --color-text-primary: #0a2117;
+  --color-text-secondary: #3a7a57;
+
+  /* Brand */
+  --color-primary: #21a552;
+  --color-primary-hover: #178040;
+  --color-secondary: #0f6e56;
+
+  /* Borders */
+  --color-border: #d1e8d8;
+
+  /* States */
+  --color-success: #10b981;
+  --color-error: #ef4444;
+  --color-warning: #f59e0b;
+
+  --font-main: 'Inter', sans-serif;
+  --font-heading: 'Poppins', sans-serif;
+
+  --font-size-title: 24px;
+  --font-size-subtitle: 16px;
+  --font-size-body: 14px;
+}
+
+[data-theme="dark"] {
+  --color-bg-page: #0d1f17;
+  --color-bg-card: #162b1f;
+  --color-bg-surface: #1a3328;
+
+  --color-text-primary: #e8f5ee;
+  --color-text-secondary: #6aad84;
+
+  --color-primary: #1db954;
+  --color-primary-hover: #13883d;
+  --color-secondary: #3ecf8e;
+
+  --color-border: #1f4030;
+
+  --color-success: #3ecf8e;
+  --color-error: #f87171;
+  --color-warning: #fbbf24;
+}

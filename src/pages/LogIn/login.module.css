@@ -1,0 +1,143 @@
+@import "../../styles/variable.css";
+
+.loginContainer {
+    width: 25%;
+    height: auto;
+    margin: 115px 0 0 400px;
+    padding: 50px;
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    gap: 20px;
+    background-color: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+}
+
+
+.welcomeTXT {
+    font-size: var(--font-size-title);
+    color: var(--color-text-primary);
+}
+
+.p {
+    font-size: var(--font-size-subtitle);
+    color: var(--color-text-secondary);
+}
+
+
+
+.socialContainer {
+    justify-content: center;
+    flex-direction: row;
+    display: flex;
+    width: 110%;
+    gap: 10px;
+}
+
+.googleBTN, .facebookBTN{
+    gap: 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    border: 1px solid grey;
+    border-radius: 7px;
+    cursor: pointer;
+    background-color: white;
+    margin-top: 6vh;
+    margin-bottom: 4vh;
+}
+
+
+    .divider {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        margin: 20px 0px;
+        color: #888;
+        font-weight: bold;
+    }
+
+    .divider::before,
+    .divider::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: #ccc;
+        margin: 0px 10px;
+    }
+
+
+
+
+
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    gap: 15px;
+    margin-top: 3.5vh;
+}
+
+.loginForm input {
+    padding: 25px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.inputContainer{
+    position: relative;
+    width: 100%;
+}
+.inputIcon{
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    pointer-events: none;
+    font-size: 16px;
+    color: black;
+}
+
+.inputContainer input{
+    width: 100%;
+    padding-left: 40px;
+    height: 40px;
+      border: 1px solid #ccc;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px
+    
+}
+
+
+
+
+
+.loginBTN {
+    justify-content: center;
+    display: flex;
+    width: 100%;
+    margin-top: 5vh;
+    
+}
+
+.loginBTN button {
+    padding: 12px;
+    width: 85%;
+    height: 50px;
+    border: none;
+    border-radius: 7px;
+    box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.1);
+    background-color: var(--color-success);
+    color: white;
+    cursor: pointer;
+    font-size: var(--font-size-subtitle);
+}
