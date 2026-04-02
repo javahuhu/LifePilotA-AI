@@ -24,6 +24,10 @@
     width: auto;
     object-fit: contain;
     margin-right: -32px;
+    gap: 2px;
+    pointer-events: none;
+    user-select: none;
+    flex-shrink: 0;
 }
 
 
@@ -31,7 +35,6 @@
 .links {
     display: flex;
     gap: 50px;
-
 }
 
 .links a {
@@ -45,13 +48,18 @@
 }
 
 .getStartedBtn {
-    padding: 0.75% 1.3%;
+    padding: 9px 15.6px;
     background-color: var(--color-primary);
     border-radius: 7px;
     border: none;
     color: white;
     font-weight: 450;
     font-size: var(--font-size-body);
+    cursor: pointer;
+}
+
+.getStartedBtn:hover {
+    background-color: var(--color-primary-hover);
 }
 
 .sparkContainer {
@@ -104,7 +112,299 @@
     text-align: center;
     margin-top: 1.3%;
     font-size: 1vw;
-    color: var( --color-text-secondary);
+    color: var(--color-text-secondary);
     line-height: 1.5;
-    font-family: var( --font-main);
+    font-family: var(--font-main);
+}
+
+.btnContainer {
+    display: flex;
+    gap: 1%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2%;
+    flex-direction: row;
+}
+
+.buttonJourney:hover {
+    background-color: var(--color-primary-hover);
+}
+
+.buttonHow {
+    width: 225px;
+    padding: 10px 16px;
+    background-color: transparent;
+    color: black;
+    border: 1.5px solid var(--color-border);
+    border-radius: 7px;
+    font-size: 18px;
+}
+
+.buttonHow:hover {
+    background-color: var(--color-bg-surface);
+}
+
+
+.rate {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.rateItem {
+    margin-top: 12%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mainLabel {
+    font-weight: bold;
+    font-size: 1.875rem;
+    color: var(--color-primary);
+}
+
+.subLabel {
+    color: var(--color-text-secondary);
+    font-size: 0.875rem;
+}
+
+.toSucceed {
+    display: flex;
+    padding: 5% 5% 2% 5%;
+    background-color: var(--color-bg-surface);
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin-top: 7%;
+}
+
+.subTxtSucceed {
+    max-width: 780px;
+    margin: 0 auto;
+    flex-direction: column;
+    text-align: center;
+}
+
+.succeedThreeContainers {
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+    flex-direction: row;
+    gap: 3%;
+    overflow: visible;
+}
+
+.succeedSubContainers {
+    height: 100px;
+    width: 100px;
+    background-color: white;
+    margin: 0 12.5px;
+}
+
+
+.steps {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 3%;
+    flex-direction: column;
+}
+
+.steps p:nth-child(2) {
+    margin-bottom: 2%;
+}
+
+
+.listSteps {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+
+}
+
+.stepsContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0px;
+    width: 330px;
+    max-width: 100%;
+}
+
+
+.circularIndex {
+    background-color: var(--color-primary);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.circularIndex p {
+    font-size: 25px;
+    color: white;
+    margin: 0;
+}
+
+.stepsTitle {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--color-text-primary);
+}
+
+.stepsDescription {
+    max-width: 80%;
+    margin: 0;
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    text-align: center;
+}
+
+.decision {
+    background-color: var(--color-bg-surface);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 4% 5% 2% 5%;
+    margin-top: 7%;
+    overflow: visible;
+}
+
+
+
+.decisionList {
+    margin-top: 2.5%;
+    flex-direction: row;
+    display: flex;
+    gap: 30px;
+    padding: 15px;
+    overflow: visible;
+
+}
+
+.gradientWrapper {
+    padding: 0 5%;
+}
+
+.gradientContainer {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    background: linear-gradient(135deg,
+            var(--color-primary),
+            var(--color-secondary));
+    padding: 3% 10% 3% 10%;
+    gap: 10px;
+    width: 800px;
+    max-width: 100%;
+    margin: 0 auto;
+    margin-top: 75px;
+    border-radius: 15px;
+}
+
+.gradientBtnStarted {
+    width: 225px;
+    padding: 10px 16px;
+    background-color: white;
+    align-items: center;
+    color: var(--color-primary);
+    font-weight: 450;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 7px;
+    border: none;
+    text-align: center;
+}
+
+.gradientBtnStarted:hover {
+    background-color: var(--color-bg-surface);
+}
+
+
+.footer {
+    background-color: var(--color-bg-card);
+    border-top: 1px solid var(--color-border);
+    padding: 60px 10% 0 10%;
+    margin-top: 7%;
+}
+
+.footerContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 40px;
+    width: 100%;
+}
+
+.footerBrand {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 250px;
+    align-items: flex-start;
+}
+
+
+.footerBrand img {
+    max-height: 100px;
+    width: 100px;
+    pointer-events: none;
+    margin-right: -15px;
+}
+
+.footerLogo {
+    flex-direction: row;
+    gap: 0px;
+    
+}
+
+.footerBrand p {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+}
+
+.footerLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footerLinks span {
+    font-size: 15px;
+    color: var(--color-text-primary);
+    margin-bottom: 5px;
+}
+
+.footerLinks a {
+    text-decoration: none;
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    transition: color 0.3s ease;
+}
+
+.footerLinks a:hover {
+    color: var(--color-primary);
+}
+
+.footerBottom {
+    margin-top: 40px;
+    padding: 20px 0;
+    border-top: 1px solid var(--color-border);
+    text-align: center;
+    font-size: 13px;
+    color: var(--color-text-secondary);
 }

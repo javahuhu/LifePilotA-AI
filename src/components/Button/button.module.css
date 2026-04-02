@@ -1,0 +1,29 @@
+@import "../../styles/variable.css";
+
+.Primary {
+    width: 225px;
+    padding: 10px 16px;
+    background-color: var(--color-primary);
+    align-items: center;
+    color: white;
+    font-weight: 450;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 7px;
+    border: none;
+    text-align: center;
+}
+
+.iconLeft {
+    display: inline-flex;
+    margin-right: 10px;
+    align-items: center;
+    font-size: 0.5%;
+}
+
+.iconRight {
+    display: inline-flex;
+    margin-left: 15px;
+    align-items: center;
+    font-size: 70%;
+}
