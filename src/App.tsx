@@ -1,4 +1,5 @@
 
+import { Routes, Route } from 'react-router-dom';
 import './App.css'
 import Landing from './pages/Landing/landing';
 import Login from './pages/LogIn/LogIn';
@@ -7,7 +8,10 @@ import Login from './pages/LogIn/LogIn';
 function App() {
 
   return (
-  <Landing/>
+    <Routes>
+      <Route path='/' element={<Landing />} />
+      <Route path='/login' element={<Login />} />
+    </Routes>
   );
 }
 

@@ -9,11 +9,13 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { faBrain, faChartLine, faFlask } from '@fortawesome/free-solid-svg-icons';
 import CardComponent from '../../components/Card/card';
 import { faCircleCheck } from '@fortawesome/free-solid-svg-icons';
-
+import {useNavigate} from 'react-router-dom';
 
 
 
 const Landing: React.FC = () => {
+
+    const navigate = useNavigate();
 
     const containerData = [
         { icon: <FontAwesomeIcon icon={faBrain} />, title: "Smart Decision Engine", description: "Get personalized, actionable plans with step-by-step guidance. AI analyzes your situation and creates tailored strategies." },
@@ -52,7 +54,7 @@ const Landing: React.FC = () => {
                     <a href='#'>Pricing</a>
                 </div>
 
-                <button className={landingStyle.getStartedBtn}>Get Started</button>
+                <button className={landingStyle.getStartedBtn} onClick={() => navigate('/login')}>Get Started</button>
             </nav>
 
             {/* spark icon */}
