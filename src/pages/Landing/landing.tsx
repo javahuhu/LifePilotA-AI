@@ -8,12 +8,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { faBrain, faChartLine, faFlask } from '@fortawesome/free-solid-svg-icons';
 import CardComponent from '../../components/Card/card';
-import { faCircleCheck } from '@fortawesome/free-solid-svg-icons';
-import {useNavigate} from 'react-router-dom';
+import { CheckCircle2 } from "lucide-react";
+import { useNavigate } from 'react-router-dom';
 
 
 
-const Landing: React.FC = () => {
+export default function Landing() {
 
     const navigate = useNavigate();
 
@@ -30,10 +30,10 @@ const Landing: React.FC = () => {
     ]
 
     const decisionList = [
-        { icon: <FontAwesomeIcon icon={faCircleCheck} fontSize={30} />, title: 'Finance', description: 'Budget planning, savings goals, investment strategies' },
-        { icon: <FontAwesomeIcon icon={faCircleCheck} fontSize={30} />, title: 'Career', description: 'Job transitions, skill development, salary negotiations' },
-        { icon: <FontAwesomeIcon icon={faCircleCheck} fontSize={30} />, title: 'Health', description: 'Fitness routines, diet plans, wellness tracking' },
-        { icon: <FontAwesomeIcon icon={faCircleCheck} fontSize={30} />, title: 'Productivity', description: 'Time management, habit building, goal setting.' },
+        { icon: <CheckCircle2 size={30} />, title: 'Finance', description: 'Budget planning, savings goals, investment strategies' },
+        { icon: <CheckCircle2 size={30} />, title: 'Career', description: 'Job transitions, skill development, salary negotiations' },
+        { icon: <CheckCircle2 size={30} />, title: 'Health', description: 'Fitness routines, diet plans, wellness tracking' },
+        { icon: <CheckCircle2 size={30} />, title: 'Productivity', description: 'Time management, habit building, goal setting.' },
     ]
 
 
@@ -215,8 +215,8 @@ const Landing: React.FC = () => {
                     {/* Brand */}
                     <div className={landingStyle.footerBrand}>
                         <div className={landingStyle.footerLogo}>
-                        <img src={lifePilotLogo} alt="logo" draggable={false} />
-                        <span>LifePilot</span>
+                            <img src={lifePilotLogo} alt="logo" draggable={false} />
+                            <span>LifePilot</span>
                         </div>
                         <p>AI-powered decision making for everyone.</p>
                     </div>
@@ -262,5 +262,3 @@ const Landing: React.FC = () => {
     );
 
 }
-
-export default Landing;

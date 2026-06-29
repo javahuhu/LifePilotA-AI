@@ -1,157 +1,3 @@
-@import "../../styles/variable.css";
-
-
-
-/* 
-.loginContainer {
-    width: 500px;
-    height: auto;
-    margin: 115px 0 0 400px;
-    padding: 50px;
-    background-color: aqua;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 15px;
-    gap: 20px;
-    background-color: var(--color-bg-card);
-    border: 1px solid var(--color-border);
-}
-
-
-.welcomeTXT {
-    font-size: var(--font-size-title);
-    color: var(--color-text-primary);
-}
-
-.p {
-    font-size: var(--font-size-subtitle);
-    color: var(--color-text-secondary);
-}
-
-
-
-.socialContainer {
-    justify-content: center;
-    flex-direction: row;
-    display: flex;
-    width: 110%;
-    gap: 10px;
-    text-align: center;
-    align-items: center;
-}
-
-.googleBTN, .facebookBTN{
-    justify-content: center;
-    gap: 10px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    padding: 8px 12px;
-    border: 1px solid grey;
-    border-radius: 7px;
-    cursor: pointer;
-    background-color: white;
-    margin-top: 6vh;
-    margin-bottom: 4vh;
-    text-align: center;
-}
-
-
-    .divider {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        width: 100%;
-        margin: 20px 0px;
-        color: #888;
-        font-weight: bold;
-    }
-
-    .divider::before,
-    .divider::after {
-        content: "";
-        flex: 1;
-        height: 1px;
-        background: #ccc;
-        margin: 0px 10px;
-    }
-
-
-
-
-
-.loginForm {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
-    gap: 15px;
-    margin-top: 3.5vh;
-}
-
-.loginForm input {
-    padding: 25px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.inputContainer{
-    position: relative;
-    width: 100%;
-}
-.inputIcon{
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #999;
-    pointer-events: none;
-    font-size: 16px;
-    color: black;
-}
-
-.inputContainer input{
-    width: 100%;
-    padding-left: 40px;
-    height: 40px;
-      border: 1px solid #ccc;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 14px
-    
-}
-
-
-
-
-
-.loginBTN {
-    justify-content: center;
-    display: flex;
-    width: 100%;
-    margin-top: 5vh;
-    
-}
-
-.loginBTN button {
-    padding: 12px;
-    width: 85%;
-    height: 50px;
-    border: none;
-    border-radius: 7px;
-    box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.1);
-    background-color: var(--color-success);
-    color: white;
-    cursor: pointer;
-    font-size: var(--font-size-subtitle);
-} */
-
-
-
-
 .container {
     display: flex;
     width: 100%;
@@ -160,7 +6,7 @@
 
 .leftContainer {
     display: flex;
-    flex: 0.9;
+    flex: 0.65;
     background: linear-gradient(to bottom right, var(--color-primary), var(--color-secondary), #084a3a);
     position: relative;
     flex-direction: column;
@@ -188,7 +34,7 @@
     margin-right: -15px;
 }
 
-.loginSparkContainer {
+.signupSparkContainer {
     display: flex;
     justify-content: start;
     align-items: center;
@@ -197,14 +43,14 @@
     background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    width: 260px;
+    width: 205px;
     max-width: 100%;
     border-radius: 999px;
     margin-top: 100px;
 }
 
 
-.loginSpark {
+.signupSpark {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -222,69 +68,76 @@
 .miniLabel {
     width: 100%;
     display: flex;
-    width: 350px;
+    width: 390px;
     color: rgba(255, 255, 255, 0.75);
     margin-top: 15px;
     font-size: 1.125rem;
 }
 
-.feedBackContainer {
-    max-width: 100%;
-    padding: 20px 20px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    gap: 15px;
-    margin-top: 40px;
-}
-
-.feedBackContainer p {
-    color: rgba(255, 255, 255, 0.9);
-    font-style: italic;
-    font-size: var(--font-size-body);
-}
 
 
-.user {
-    display: flex;
-    flex-direction: row;
-    gap: 15px;
-    margin-top: 10px;
-    align-items: center;
-}
-
-.userProfile {
-    padding: 8px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 999px;
-    width: fit-content;
-}
-
-.userProfile img {
-    display: block;
-    max-height: 45px;
-    width: 45px;
-    object-fit: cover;
-    border-radius: 999px;
-}
-
-.userInfo {
+.features {
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 15px;
+    margin-top: 25px;
 }
 
-.userName {
-    color: rgba(255, 255, 255, 0.9);
-    font-weight: var(--font-weight-medium);
+.featuresItems {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.85);
 }
 
-.userRole {
-    color: rgba(255, 255, 255, 0.75);
-    font-size: 13px;
+.featuresText {
+    font-size: 15px;
 }
 
+.planCardSignUp {
+    position: relative;
+    z-index: 10;
 
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+
+    padding: 15px 20px;
+    margin-top: 60px;
+}
+
+/* Header row */
+.planHeaderSignUp {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+/* Title */
+.planTitleSignUp {
+    color: white;
+    font-weight: 600;
+}
+
+/* Badge */
+.planBadgeSignUp {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 12px;
+
+    padding: 4px 10px;
+    border-radius: 999px;
+}
+
+/* Description */
+.planDescriptionSignUp {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+}
 
 @keyframes floatTopRight {
     0% {
@@ -373,27 +226,27 @@
 }
 
 
-.LoginRate {
+.signupRate {
     display: flex;
     flex-direction: row;
     gap: 20px;
     margin-top: auto;
 }
 
-.rateItem {
+.signuprateItem {
     display: flex;
     flex-direction: column;
     gap: 5px;
     align-items: center;
 }
 
-.LoginMainLabel {
+.signupMainLabel {
     color: white;
     font-weight: bold;
     font-size: 1.5rem;
 }
 
-.LoginSubLabel {
+.signupSubLabel {
     color: rgba(255, 255, 255, 0. 60);
     font-size: 0.75rem;
     color: rgba(255, 255, 255, 0.60);
@@ -408,13 +261,15 @@
     overflow: visible;
 }
 
-.parentContainerRight{
+.parentContainerRightSignUp {
     flex: 1;
-     justify-content: center;
+    justify-content: center;
     align-items: center;
     display: flex;
     overflow: visible;
+
 }
+
 
 .signInContainer {
     display: flex;
@@ -441,7 +296,7 @@
     color: var(--color-primary-hover);
 }
 
-.socialLogin {
+.signupLogin {
     display: flex;
     flex-direction: row;
     gap: 10px;
@@ -452,7 +307,7 @@
 
 }
 
-.googleLogin {
+.googleSignUp {
     display: flex;
     height: 40px;
     width: 200px;
@@ -468,16 +323,16 @@
     font-size: 14px;
 }
 
-.googleLogin:hover {
+.googleSignUp:hover {
     background-color: var(--color-bg-surface);
 }
 
-.googleLogin img {
+.googleSignUp img {
     height: 22px;
     width: 22px;
 }
 
-.facebookLogin {
+.facebookSignUp {
     display: flex;
     height: 40px;
     width: 200px;
@@ -492,16 +347,16 @@
     font-size: 14px;
 }
 
-.facebookLogin:hover {
+.facebookSignUp:hover {
     background-color: var(--color-bg-surface);
 }
 
-.facebookLogin img {
+.facebookSignUp img {
     height: 22px;
     width: 22px;
 }
 
-.dividerLogin {
+.dividerSignUp {
     display: flex;
     align-items: center;
     text-align: center;
@@ -511,18 +366,18 @@
     color: var(--color-text-secondary);
 }
 
-.dividerLogin::before,
-.dividerLogin::after {
+.dividerSignUp::before,
+.dividerSignUp::after {
     content: '';
     flex: 1;
     border-top: 1px solid #ddd;
 }
 
-.dividerLogin::before {
+.dividerSignUp::before {
     margin-right: 12px;
 }
 
-.dividerLogin::after {
+.dividerSignUp::after {
     margin-left: 12px;
 }
 
@@ -536,6 +391,13 @@
     overflow: visible;
     margin-top: 25px;
     /* add this */
+}
+
+.userName {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    overflow: visible;
 }
 
 .formGroup {
@@ -669,7 +531,7 @@
 }
 
 @media (max-width: 1024px) {
-   .leftContainer {
+    .leftContainer {
         display: none !important;
     }
 }
@@ -677,14 +539,11 @@
 /* sm - large mobile (600px) */
 @media (max-width: 600px) {
 
-    .parentContainerRight{
+    .parentContainerRightSignUp {
         padding: 0px 15px;
     }
- 
+
 }
 
 /* xs - small mobile (480px) */
-@media (max-width: 480px) {
- 
-
-}
+@media (max-width: 480px) {}

@@ -2,17 +2,19 @@ import React, { useState } from "react";
 import type { LoginData } from "../../types/auth.types";
 import { loginUser } from "../../api/auth.api";
 import loginStyle from "../LogIn/login.module.css";
+import "./login-responsive.css";
 import lifePilotLogo from "../../assets/lifepilotlogo.png";
 import sampleUser from "../../assets/sampleuser.jpg";
 import GoogleIcon from "../../assets/googleicon.png";
 import FacebookIcon from "../../assets/facebookicon.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope, faLock } from "@fortawesome/free-solid-svg-icons";
-import { Sparkle, Sparkles } from "lucide-react";
+import { useNavigate } from 'react-router-dom';
+import { Sparkles } from "lucide-react";
 import ButtonComponent from "../../components/Button/button";
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
-const Login: React.FC = () => {
+export default function Login() {
+    const navigate = useNavigate();
     const [formData, setFormData] = useState<LoginData>({ email: "", password: "" });
     const [error, setError] = useState<string>("");
     const [showPassword, setShowPassword] = useState<boolean>(false);
@@ -116,113 +118,114 @@ const Login: React.FC = () => {
             {/* left Container End */}
 
             {/* Right Container Start */}
-            <div className={loginStyle.rightContainer}>
-                <div className={loginStyle.signInContainer}>
-                    <h1 className="fs-2 fw-bold">Sign in to your account
-                    </h1>
-                    <div className={loginStyle.noAccount}>
-                        <span style={{ color: 'var(--color-text-secondary)' }}>Don't have an account?{" "}</span>
-                        <ButtonComponent variant='Secondary' className={loginStyle.buttonJourney}>
+            <div className={loginStyle.parentContainerRight}>
+                <div id="right-container" className={loginStyle.rightContainer}>
+                    <div className={loginStyle.signInContainer}>
+                        <h1 className="fs-2 fw-bold">Sign in to your account
+                        </h1>
+                        <div className={loginStyle.noAccount}>
+                            <span style={{ color: 'var(--color-text-secondary)' }}>Don't have an account?{" "}</span>
+                            <ButtonComponent variant='Secondary' className={loginStyle.buttonJourney} onClick={() => navigate('/signup')}>
 
-                            Sign up for free
-                        </ButtonComponent>
-                    </div>
-
-                    <div className={loginStyle.socialLogin}>
-
-                        <ButtonComponent className={loginStyle.googleLogin}>
-                            <img src={GoogleIcon} />
-                            <span>Google</span>
-                        </ButtonComponent>
-
-                        <ButtonComponent className={loginStyle.facebookLogin}>
-                            <img src={FacebookIcon} />
-                            <span>Facebook</span>
-
-                        </ButtonComponent>
-                    </div>
-
-                    <div className={loginStyle.dividerLogin}>
-                        <span>or continue with email</span>
-                    </div>
-
-                    <form onSubmit={handleSubmit} className={loginStyle.form}>
-
-                        <div className={loginStyle.formGroup}>
-                            <label className={loginStyle.label}>Email address</label>
-
-                            <input
-                                type="email"
-                                placeholder="you@example.com"
-                                required
-                                value={formData.email}
-                                onChange={handleChange}
-                                className={loginStyle.input}
-                            />
+                                Sign up for free
+                            </ButtonComponent>
                         </div>
 
-                        <div className={loginStyle.formGroup}>
-                            <div className={loginStyle.passwordHeader}>
-                                <label className={loginStyle.label}>Password</label>
-                                <button type="button" className={loginStyle.forgot}>
-                                    Forgot password?
-                                </button>
-                            </div>
+                        <div className={loginStyle.socialLogin}>
 
-                            <div className={loginStyle.passwordWrapper}>
+                            <ButtonComponent className={loginStyle.googleLogin}>
+                                <img src={GoogleIcon} />
+                                <span>Google</span>
+                            </ButtonComponent>
+
+                            <ButtonComponent className={loginStyle.facebookLogin}>
+                                <img src={FacebookIcon} />
+                                <span>Facebook</span>
+
+                            </ButtonComponent>
+                        </div>
+
+                        <div className={loginStyle.dividerLogin}>
+                            <span>or continue with email</span>
+                        </div>
+
+                        <form onSubmit={handleSubmit} className={loginStyle.form}>
+
+                            <div className={loginStyle.formGroup}>
+                                <label className={loginStyle.label}>Email address</label>
+
                                 <input
-                                    type={showPassword ? "text" : "password"}
-                                    placeholder="••••••••"
+                                    type="email"
+                                    name="email"
+                                    placeholder="you@example.com"
                                     required
-                                    value={formData.password}
+                                    value={formData.email}
                                     onChange={handleChange}
                                     className={loginStyle.input}
                                 />
-
-                                <button
-                                    type="button"
-                                    onClick={() => setShowPassword(!showPassword)}
-                                    className={loginStyle.eyeBtn}
-                                >
-                                    👁
-                                </button>
                             </div>
-                        </div>
 
-                        <div className={loginStyle.remember}>
-                            <input type="checkbox" />
-                            <span>Remember me for 30 days</span>
-                        </div>
+                            <div className={loginStyle.formGroup}>
+                                <div className={loginStyle.passwordHeader}>
+                                    <label className={loginStyle.label}>Password</label>
+                                    <button type="button" className={loginStyle.forgot}>
+                                        Forgot password?
+                                    </button>
+                                </div>
 
-                        <ButtonComponent variant='Primary' className={loginStyle.submitBtn} icon={<FontAwesomeIcon icon={faArrowRight} />} iconPosition='Right'>
-                            Sign In
-                        </ButtonComponent>
+                                <div className={loginStyle.passwordWrapper}>
+                                    <input
+                                        type={showPassword ? "text" : "password"}
+                                        name="password"
+                                        placeholder="••••••••"
+                                        required
+                                        value={formData.password}
+                                        onChange={handleChange}
+                                        className={loginStyle.input}
+                                    />
 
-                    </form>
-                    
-                    <p className="mt-5 text-center" style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>
-                        By signing in, you agree to our{" "}
-                        <a href="#" className={loginStyle.termsLink}>
-                            Terms of Service
-                        </a>{" "}
-                        and{" "}
-                        <a href="#" className={loginStyle.termsLink}>
-                            Privacy Policy
-                        </a>
-                        .
-                    </p>
+                                    <button
+                                        type="button"
+                                        onClick={() => setShowPassword(!showPassword)}
+                                        className={loginStyle.eyeBtn}
+                                    >
+                                        👁
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div className={loginStyle.remember}>
+                                <input type="checkbox" />
+                                <span>Remember me for 30 days</span>
+                            </div>
+
+                            <ButtonComponent variant='Primary' className={loginStyle.submitBtn} icon={<FontAwesomeIcon icon={faArrowRight} />} iconPosition='Right'>
+                                Sign In
+                            </ButtonComponent>
+
+                        </form>
+
+                        <p className="mt-5 text-center" style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>
+                            By signing in, you agree to our{" "}
+                            <a href="#" className={loginStyle.termsLink}>
+                                Terms of Service
+                            </a>{" "}
+                            and{" "}
+                            <a href="#" className={loginStyle.termsLink}>
+                                Privacy Policy
+                            </a>
+                            .
+                        </p>
 
 
+
+                    </div>
 
                 </div>
-
             </div>
             {/* Right Container End */}
         </div>
 
     );
 }
-
-export default Login;
-
 

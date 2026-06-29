@@ -9,6 +9,8 @@ type ButtonProps = {
     onClick?: () => void;
     icon?: React.ReactNode;
     iconPosition?: "Left" | "Right";
+    type?: "button" | "submit" | "reset";
+    disabled?: boolean;
 }
 
 const ButtonComponent: React.FC<ButtonProps> = ({
@@ -19,9 +21,12 @@ const ButtonComponent: React.FC<ButtonProps> = ({
     onClick,
     icon,
     iconPosition = "Right",
+    type = "button",
+    disabled = false,
+    
 }) => {
     return (
-        <button onClick={onClick} className={[buttonStyle.button, buttonStyle[variant], buttonStyle[size], className].join(" ")}>
+        <button  type={type} disabled={disabled} onClick={onClick} className={[buttonStyle.button, buttonStyle[variant], buttonStyle[size], className].join(" ")}>
             {icon && iconPosition === "Left" && (
                 <span className={buttonStyle.iconLeft}>{icon}</span>
             )}
