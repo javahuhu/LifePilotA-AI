@@ -29,7 +29,7 @@ export default function Login() {
         try {
             const response = await loginUser(formData);
             console.log("Logged in:", response);
-
+            navigate('/home');
         } catch (err: any) {
             setError(err.message || "Login Failed");
         }
@@ -150,7 +150,9 @@ export default function Login() {
                         </div>
 
                         <form onSubmit={handleSubmit} className={loginStyle.form}>
-
+                            {error && (
+                                <div className={loginStyle.errorMessage}>{error}</div>
+                            )}
                             <div className={loginStyle.formGroup}>
                                 <label className={loginStyle.label}>Email address</label>
 

@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import landingStyle from "./landing.module.css";
 import "./landing-responsive.css";
 import lifePilotLogo from "../../assets/lifepilotlogo.png";

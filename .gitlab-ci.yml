@@ -1,0 +1,32 @@
+stages: 
+  - install
+  - build
+  - docker
+
+install:
+  stage: install
+  image: node:22
+
+  script:
+    - npm install
+
+build:
+  stage: build
+  image: node:22
+
+  script:
+    - npm install
+    - npm run build
+
+docker:
+  stage: docker
+  image: docker:27
+
+  services:
+      - docker:27-dind
+
+  variables:
+      DOCKER_TLS_CERTDIR: ""
+
+  script:
+      - docker build -t react-demo .

@@ -28,7 +28,7 @@ export default function SignUpPage() {
         try {
             const response = await signupUser(formData);
             console.log("Creating Account:", response);
-
+            navigate('/home');
         } catch (err: any) {
             setError(err.message || "Sign Up Failed");
         }
@@ -126,6 +126,12 @@ export default function SignUpPage() {
                                 Sign In
                             </ButtonComponent>
                         </div>
+
+                        {error && (
+                            <div className={signupStyle.errorMessage}>
+                                {error}
+                            </div>
+                        )}
 
                         <div className={signupStyle.signupLogin}>
 

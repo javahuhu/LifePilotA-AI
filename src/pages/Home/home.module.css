@@ -1,0 +1,794 @@
+:root {
+  color-scheme: light dark;
+}
+
+.page {
+  min-height: 100vh;
+  background: var(--color-bg-page);
+  color: var(--color-text-primary);
+  overflow-x: hidden;
+  padding: 24px 24px 32px 140px;
+}
+
+.sidebar {
+  position: fixed;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 50;
+  width: 88px;
+  height: 85vh;
+  max-height: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px 10px;
+  gap: 24px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 30px 80px rgba(15, 23, 42, 0.12);
+  border-radius: 2rem;
+  backdrop-filter: blur(18px);
+  transition: width 0.35s ease, padding 0.35s ease, background 0.35s ease;
+  overflow: hidden;
+}
+
+.sidebar:hover {
+  width: 280px;
+}
+
+.brandBlock {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.brandAvatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 18px;
+  background: var(--color-primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.brandDetails {
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.sidebar:hover .brandDetails {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.brandName,
+.brandLabel {
+  display: block;
+  color: var(--color-text-primary);
+}
+
+.brandName {
+  font-weight: 700;
+}
+
+.brandLabel {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+}
+
+.navList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.navItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  padding: 12px 12px;
+  border-radius: 18px;
+  background: transparent;
+  color: var(--color-text-secondary);
+  border: none;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.navItem:hover,
+.navItemActive {
+  background: var(--color-bg-surface);
+  color: var(--color-text-primary);
+}
+
+.navIcon {
+  display: grid;
+  place-items: center;
+}
+
+.navLabel {
+  white-space: nowrap;
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+  transition: opacity 0.25s ease, width 0.25s ease;
+}
+
+.sidebar:hover .navLabel {
+  opacity: 1;
+  width: auto;
+}
+
+.sidebarFooter {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 18px;
+}
+
+.themeToggle,
+.profileButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: none;
+  background: var(--color-bg-surface);
+  color: var(--color-text-primary);
+  border-radius: 16px;
+  padding: 12px;
+  cursor: pointer;
+  transition: background 0.25s ease;
+}
+
+.themeToggle:hover,
+.profileButton:hover {
+  background: var(--color-border);
+}
+
+.themeToggle span,
+.profileButton span {
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+  transition: opacity 0.25s ease, width 0.25s ease;
+}
+
+.sidebar:hover .themeToggle span,
+.sidebar:hover .profileButton span {
+  opacity: 1;
+  width: auto;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: min(100%, 1440px);
+  margin: 0 auto;
+}
+
+.heroCard,
+.statCard,
+.planCard,
+.suggestionCard,
+.simulationPanel,
+.simulationResults,
+.activityCard {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 32px;
+  padding: 32px;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+}
+
+.heroCard {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.heroHead {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.heroTitleBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: var(--color-bg-surface);
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.modeRow {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.modeButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-surface);
+  color: var(--color-text-secondary);
+  border-radius: 999px;
+  padding: 12px 18px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.modeButton:hover {
+  transform: translateY(-1px);
+}
+
+.modeButtonActive {
+  background: var(--color-primary);
+  color: white;
+  border-color: transparent;
+}
+
+.modeIcon {
+  display: grid;
+  place-items: center;
+}
+
+.activeTab {
+  background: var(--color-primary);
+  color: white;
+  border-color: transparent;
+}
+
+.heroCard h1 {
+  font-size: 2rem;
+  color: var(--color-text-primary);
+  max-width: 740px;
+}
+
+.heroCard p,
+.heroSubtitle {
+  color: var(--color-text-secondary);
+  max-width: 680px;
+}
+
+.heroInputWrapper {
+  position: relative;
+  display: grid;
+  gap: 16px;
+}
+
+.heroTextarea {
+  width: 100%;
+  min-height: 160px;
+  border-radius: 24px;
+  border: 1px solid var(--color-border);
+  padding: 22px;
+  background: var(--color-input-background);
+  color: var(--color-text-primary);
+  resize: none;
+  font-size: 1rem;
+}
+
+.heroButton {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  z-index: 1;
+  border-radius: 999px;
+  padding: 14px 24px;
+}
+
+.suggestionsRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  color: var(--color-text-secondary);
+  margin-top: 18px;
+}
+
+.suggestionTags {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.suggestionTags button {
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-surface);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 20px;
+}
+
+@media (min-width: 640px) {
+  .statsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .statsGrid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.statCard {
+  padding: 24px;
+}
+
+.statHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+  color: var(--color-text-secondary);
+}
+
+.riskBadge {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(16, 185, 129, 0.12);
+  color: var(--color-success);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.statValue {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.statSubtitle {
+  color: var(--color-text-secondary);
+  margin-top: 8px;
+}
+
+.progressBar {
+  height: 8px;
+  background: var(--color-bg-surface);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: 16px;
+}
+
+.progressFill {
+  height: 100%;
+  background: var(--color-primary);
+  border-radius: 999px;
+}
+
+.plansSection {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sectionHeader h2 {
+  color: var(--color-text-primary);
+}
+
+.viewAll {
+  background: transparent;
+  border: none;
+  color: var(--color-primary);
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.planCards {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 20px;
+}
+
+@media (min-width: 1024px) {
+  .planCards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.planCard {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.planTop {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--color-text-secondary);
+}
+
+.statusOnTrack,
+.statusBehind {
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.statusOnTrack {
+  background: rgba(33, 165, 82, 0.12);
+  color: var(--color-success);
+}
+
+.statusBehind {
+  background: rgba(245, 158, 11, 0.15);
+  color: var(--color-warning);
+}
+
+.planProgressRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.progressBarSmall {
+  flex: 1;
+  height: 8px;
+  background: var(--color-bg-surface);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progressFillSmall {
+  height: 100%;
+  background: var(--color-primary);
+}
+
+.planActions {
+  display: flex;
+  gap: 12px;
+}
+
+.planActions button {
+  flex: 1;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-surface);
+  color: var(--color-text-secondary);
+  border-radius: 16px;
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.suggestionsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.suggestionCards {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 20px;
+}
+
+@media (min-width: 1024px) {
+  .suggestionCards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.suggestionCard {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.suggestionCard h3 {
+  color: var(--color-text-primary);
+}
+
+.suggestionCard p {
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.suggestionActions {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+}
+
+.suggestionButton {
+  min-width: 140px;
+}
+
+.dismissButton {
+  background: transparent;
+  border: none;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+}
+
+.simulationSection {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 1024px) {
+  .simulationSection {
+    grid-template-columns: 1.5fr 1fr;
+  }
+}
+
+.simulationPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.simulationHeader {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.simulationPanel h2 {
+  color: var(--color-text-primary);
+  font-size: 1.9rem;
+}
+
+.simulationPanel p {
+  color: var(--color-text-secondary);
+}
+
+.simulationSlider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.sliderTrack {
+  flex: 1;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--color-bg-surface);
+  position: relative;
+}
+
+.sliderThumb {
+  position: absolute;
+  left: 55%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  box-shadow: 0 0 0 6px rgba(33, 165, 82, 0.12);
+}
+
+.currentContribution {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  color: var(--color-text-secondary);
+  padding: 16px 0 0;
+}
+
+.currentContribution strong {
+  color: var(--color-text-primary);
+}
+
+.simulationResults {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.resultsHeader {
+  font-weight: 700;
+  color: var(--color-text-secondary);
+}
+
+.resultsValue {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--color-text-primary);
+}
+
+.resultsPhrase {
+  color: var(--color-text-secondary);
+}
+
+.successNote {
+  background: var(--color-bg-surface);
+  padding: 18px;
+  border-radius: 20px;
+  color: var(--color-text-secondary);
+}
+
+.updatePlanButton {
+  width: 100%;
+}
+
+.activitySection {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.activityGrid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 20px;
+}
+
+@media (min-width: 1024px) {
+  .activityGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.activityCard {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--color-text-secondary);
+}
+
+.activityValue {
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.activityProgressBar {
+  width: 100%;
+  height: 10px;
+  background: var(--color-bg-surface);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.habitList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.habitItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: var(--color-bg-surface);
+  border-radius: 18px;
+}
+
+.habitDone,
+.habitPending {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+}
+
+.habitDone {
+  background: var(--color-primary);
+}
+
+.habitPending {
+  border: 2px solid var(--color-border);
+  background: transparent;
+}
+
+.weeklyChart {
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+  min-height: 140px;
+}
+
+.barWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.weekBar {
+  width: 18px;
+  border-radius: 999px;
+  background: var(--color-bg-surface);
+}
+
+.summaryNote {
+  color: var(--color-text-secondary);
+}
+
+@media (max-width: 1280px) {
+  .page {
+    padding-left: 120px;
+  }
+
+  .sidebar {
+    left: 12px;
+    width: 76px;
+    padding: 20px 10px;
+  }
+
+  .sidebar:hover {
+    width: 260px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .page {
+    padding-left: 100px;
+  }
+}
+
+@media (max-width: 900px) {
+  .page {
+    padding-left: 0;
+  }
+
+  .sidebar {
+    display: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .page {
+    padding: 16px;
+  }
+
+  .heroCard,
+  .statCard,
+  .planCard,
+  .suggestionCard,
+  .simulationPanel,
+  .simulationResults,
+  .activityCard {
+    border-radius: 24px;
+    padding: 22px;
+  }
+}

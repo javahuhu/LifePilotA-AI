@@ -657,6 +657,14 @@
     opacity: 0.7;
 }
 
+.errorMessage {
+    color: var(--color-error);
+    background: rgba(239, 68, 68, 0.08);
+    border: 1px solid rgba(239, 68, 68, 0.16);
+    border-radius: 12px;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+}
 
 .termsLink {
     color: var(--color-primary);
